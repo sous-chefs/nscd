@@ -22,6 +22,10 @@ package "nscd" do
 end
 
 service "nscd" do
+  case node[:platform]
+  when "smartos"
+    service_name "name-service-cache:default"
+  end
   supports :restart => true, :status => true
   action [:enable, :start]
 end
