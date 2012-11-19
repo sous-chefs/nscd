@@ -10,6 +10,7 @@ Requirements
 
 * Debian/Ubuntu
 * RHEL/CentOS
+* SmartOS
 
 Recipes
 =======
