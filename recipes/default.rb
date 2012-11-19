@@ -18,6 +18,7 @@
 #
 package "nscd" do
   action :upgrade
+  not_if { node[:platform] == "smartos" }
 end
 
 service "nscd" do
