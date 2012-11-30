@@ -8,6 +8,6 @@ suggests          "openldap"
 
 recipe "nscd", "Installs and configures nscd"
 
-%w{ redhat centos debian ubuntu }.each do |os|
+%w{ redhat centos debian ubuntu amazon scientific oracle }.each do |os|
   supports os
 end
