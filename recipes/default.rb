@@ -18,9 +18,11 @@
 #
 package "nscd" do
   action :install
+  not_if { platform?("smartos") }
 end
 
 service "nscd" do
+  service_name "name-service-cache:default" if platform?("smartos")
   supports :restart => true, :status => true
   action [:enable, :start]
 end
