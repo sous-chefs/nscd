@@ -2,6 +2,11 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
+v0.10.0
+-------
+### Improvement
+- **[COOK-1915](https://tickets.opscode.com/browse/COOK-1915)** - Add SmartOS support
+
 v0.9.0
 ------
 ### Improvement
