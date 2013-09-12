@@ -11,6 +11,10 @@ Requirements
 - RHEL/CentOS
 - SmartOS
 
+Attributes
+-------
+
+* `node['nscd']['package']` - nscd package name, defaults to `nscd`. Depending on platform other variants include: `unscd`, `gnscd`
 
 Recipes
 -------
