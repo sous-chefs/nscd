@@ -19,7 +19,7 @@
 
 package "nscd" do
   action :install
-  package_name node['nscd']['package'] = 'nscd'
+  package_name node['nscd']['package']
   not_if { platform?("smartos") }
 end
 
