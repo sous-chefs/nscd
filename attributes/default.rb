@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: nscd
-# Recipe:: default
+# Attributes:: default
 #
 # Copyright 2009, Opscode, Inc.
 #
@@ -17,21 +17,5 @@
 # limitations under the License.
 #
 
-package "nscd" do
-  action :install
-  package_name node['nscd']['package']
-  not_if { platform?("smartos") }
-end
-
-service "nscd" do
-  service_name "name-service-cache:default" if platform?("smartos")
-  supports :restart => true, :status => true
-  action [:enable, :start]
-end
-
-%w{ passwd group }.each do |cmd|
-  execute "nscd-clear-#{cmd}" do
-    command "/usr/sbin/nscd -i #{cmd}"
-    action :nothing
-  end
-end
+# Possible values: nscd, unscd, gnscd
+default['nscd']['package'] = 'nscd'
