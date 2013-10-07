@@ -2,6 +2,7 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
+
 v0.10.0
 -------
 ### Improvement

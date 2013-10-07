@@ -2,7 +2,7 @@
 # Cookbook Name:: nscd
 # Recipe:: default
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright 2009-2013, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,21 +17,20 @@
 # limitations under the License.
 #
 
-package "nscd" do
-  action :install
+package 'nscd' do
   package_name node['nscd']['package']
-  not_if { platform?("smartos") }
+  not_if { platform?('smartos') }
 end
 
-service "nscd" do
-  service_name "name-service-cache:default" if platform?("smartos")
+service 'nscd' do
+  service_name 'name-service-cache:default' if platform?('smartos')
   supports :restart => true, :status => true
-  action [:enable, :start]
+  action   [:enable, :start]
 end
 
-%w{ passwd group }.each do |cmd|
+%w[passwd group].each do |cmd|
   execute "nscd-clear-#{cmd}" do
     command "/usr/sbin/nscd -i #{cmd}"
-    action :nothing
+    action  :nothing
   end
 end

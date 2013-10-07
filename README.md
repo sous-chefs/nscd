@@ -1,5 +1,7 @@
 nscd Cookbook
 =============
+[![Build Status](https://secure.travis-ci.org/opscode-cookbooks/nscd.png?branch=master)](http://travis-ci.org/opscode-cookbooks/nscd)
+
 Installs and configures nscd.
 
 
@@ -12,8 +14,7 @@ Requirements
 - SmartOS
 
 Attributes
--------
-
+----------
 * `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
 
 Recipes
@@ -27,10 +28,10 @@ Usage
 If you're using nscd, add this recipe. If you need to notify the clear commands, e.g.,
 
 ```ruby
-cookbook_file "/etc/nsswitch.conf" do
-  source "nsswitch.conf"
-  notifies :run, "execute[nscd-clear-passwd]", :immediately
-  notifies :run, "execute[nscd-clear-group]", :immediately
+cookbook_file '/etc/nsswitch.conf' do
+  source   'nsswitch.conf'
+  notifies :run, 'execute[nscd-clear-passwd]', :immediately
+  notifies :run, 'execute[nscd-clear-group]', :immediately
 end
 ```
 
@@ -40,7 +41,7 @@ License & Authors
 - Author:: Joshua Timberman
 
 ```text
-Copyright:: 2008-2011, Opscode, Inc
+Copyright:: 2008-2013, Opscode, Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
