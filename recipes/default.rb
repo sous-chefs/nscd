@@ -40,5 +40,8 @@ template '/etc/nscd.conf' do
   owner 'root'
   group 'root'
   mode 00644
+  variables(
+    :settings => node['nscd']
+  )
   notifies :restart, 'service[nscd]'
 end

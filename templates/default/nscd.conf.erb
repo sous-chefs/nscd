@@ -29,59 +29,21 @@
 # Currently supported cache names (services): passwd, group, hosts, services
 #
 
-logfile			/var/log/nscd
-threads			4
-max-threads		32
-server-user		nscd
-stat-user		root
-debug-level		0
-#reload-count		5
-paranoia		no
-#restart-interval	3600
+logfile			<%= @settings['logfile'] %>
+threads			<%= @settings['threads'] %>
+max-threads		<%= @settings['max_threads'] %>
+server-user		<%= @settings['server_user'] %>
+stat-user		<%= @settings['stat_user'] %>
+debug-level		<%= @settings['debug_level'] %>
+reload-count		<%= @settings['reload_count'] %>
+paranoia		<%= @settings['paranoia'] %>
+restart-interval	<%= @settings['restart_interval'] %>
 
-enable-cache		passwd		yes
-positive-time-to-live	passwd		600
-negative-time-to-live	passwd		20
-suggested-size		passwd		211
-check-files		passwd		yes
-persistent		passwd		yes
-shared			passwd		yes
-max-db-size		passwd		33554432
-auto-propagate		passwd		yes
+<% @settings['databases'].each do |database| %>
 
-enable-cache		group		yes
-positive-time-to-live	group		3600
-negative-time-to-live	group		60
-suggested-size		group		211
-check-files		group		yes
-persistent		group		yes
-shared			group		yes
-max-db-size		group		33554432
-auto-propagate		group		yes
-
-enable-cache		hosts		yes
-positive-time-to-live	hosts		3600
-negative-time-to-live	hosts		20
-suggested-size		hosts		211
-check-files		hosts		yes
-persistent		hosts		yes
-shared			hosts		yes
-max-db-size		hosts		33554432
-
-enable-cache		services	yes
-positive-time-to-live	services	28800
-negative-time-to-live	services	20
-suggested-size		services	211
-check-files		services	yes
-persistent		services	yes
-shared			services	yes
-max-db-size		services	33554432
-
-enable-cache		netgroup	yes
-positive-time-to-live	netgroup	28800
-negative-time-to-live	netgroup	20
-suggested-size		netgroup	211
-check-files		netgroup	yes
-persistent		netgroup	yes
-shared			netgroup	yes
-max-db-size		netgroup	33554432
+# <%= database %> database
+<% @settings[database].each do |param,value| %>
+<% param = param.gsub(/_/, '-') %>
+<%= param %>		<%= database %>	<%= value %>
+<% end %>
+<% end %>
