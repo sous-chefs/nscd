@@ -17,6 +17,29 @@ Attributes
 ----------
 * `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
 
+The following attributes affect configuration of `/etc/nscd.conf`.
+* `default['nscd']['logfile']`. Default `/var/log/nscd`
+* `default['nscd']['threads']`. Default `4`
+* `default['nscd']['max_threads']`. Default `32`
+* `default['nscd']['server_user']`. Default `nscd`
+* `default['nscd']['stat_user']`. Default `root`
+* `default['nscd']['debug_level']`. Default `0`
+* `default['nscd']['reload_count']`. Default `5`
+* `default['nscd']['paranoia']`. Default `no`
+* `default['nscd']['restart_interval']`. Default `3600`
+* `default['nscd']['databases']`. List of databases to configure. Default `%[passwd group hosts services netgroup`]
+
+Each database has attributes:
+* `default['nscd'][DATABASE]['enable_cache']`. Default `yes`
+* `default['nscd'][DATABASE]['positive_time_to_live']`. Default `600`
+* `default['nscd'][DATABASE]['negative_time_to_live']`. Default `20`
+* `default['nscd'][DATABASE]['suggested_size']`. Default `211`
+* `default['nscd'][DATABASE]['check_files']`. Default `yes`
+* `default['nscd'][DATABASE]['persistent']`. Default `yes`
+* `default['nscd'][DATABASE]['shared']`. Default `yes`
+* `default['nscd'][DATABASE]['max_db_size']`. Default `33554432`
+* `default['nscd'][DATABASE]['auto_propagate']`. Default `yes`
+
 Recipes
 -------
 ### default
