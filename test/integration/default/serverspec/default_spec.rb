@@ -7,4 +7,8 @@ describe 'nscd::default' do
     expect(service('nscd')).to be_enabled
     expect(service('nscd')).to be_running
   end
+
+  it 'creates the /etc/nscd.conf config file' do
+    expect(file('/etc/nscd.conf')).to be_file
+  end
 end
