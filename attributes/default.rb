@@ -77,7 +77,9 @@ default['nscd']['services']['shared'] = 'yes'
 default['nscd']['services']['max_db_size'] = 33554432
 
 # services netgroup
-default['nscd']['netgroup']['enable_cache'] = 'yes'
+# netgroup caching is known-broken, so disable it in the default config,
+# see: https://bugs.launchpad.net/ubuntu/+source/eglibc/+bug/1068889
+default['nscd']['netgroup']['enable_cache'] = 'no'
 default['nscd']['netgroup']['positive_time_to_live'] = 28800
 default['nscd']['netgroup']['negative_time_to_live'] = 20
 default['nscd']['netgroup']['suggested_size'] = 211
