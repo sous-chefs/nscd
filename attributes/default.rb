@@ -42,7 +42,7 @@ default['nscd']['passwd']['suggested_size'] = 211
 default['nscd']['passwd']['check_files'] = 'yes'
 default['nscd']['passwd']['persistent'] = 'yes'
 default['nscd']['passwd']['shared'] = 'yes'
-default['nscd']['passwd']['max_db_size'] = 33554432
+default['nscd']['passwd']['max_db_size'] = 0x2000000
 default['nscd']['passwd']['auto_propagate'] = 'yes'
 
 # group database
@@ -53,7 +53,7 @@ default['nscd']['group']['suggested_size'] = 211
 default['nscd']['group']['check_files'] = 'yes'
 default['nscd']['group']['persistent'] = 'yes'
 default['nscd']['group']['shared'] = 'yes'
-default['nscd']['group']['max_db_size'] = 33554432
+default['nscd']['group']['max_db_size'] = 0x2000000
 default['nscd']['group']['auto_propagate'] = 'yes'
 
 # hosts database
@@ -64,7 +64,7 @@ default['nscd']['hosts']['suggested_size'] = 211
 default['nscd']['hosts']['check_files'] = 'yes'
 default['nscd']['hosts']['persistent'] = 'yes'
 default['nscd']['hosts']['shared'] = 'yes'
-default['nscd']['hosts']['max_db_size'] = 33554432
+default['nscd']['hosts']['max_db_size'] = 0x2000000
 
 # services database
 default['nscd']['services']['enable_cache'] = 'yes'
@@ -74,7 +74,7 @@ default['nscd']['services']['suggested_size'] = 211
 default['nscd']['services']['check_files'] = 'yes'
 default['nscd']['services']['persistent'] = 'yes'
 default['nscd']['services']['shared'] = 'yes'
-default['nscd']['services']['max_db_size'] = 33554432
+default['nscd']['services']['max_db_size'] = 0x2000000
 
 # services netgroup
 # netgroup caching is known-broken, so disable it in the default config,
@@ -86,4 +86,4 @@ default['nscd']['netgroup']['suggested_size'] = 211
 default['nscd']['netgroup']['check_files'] = 'yes'
 default['nscd']['netgroup']['persistent'] = 'yes'
 default['nscd']['netgroup']['shared'] = 'yes'
-default['nscd']['netgroup']['max_db_size'] = 33554432
+default['nscd']['netgroup']['max_db_size'] = 0x2000000
