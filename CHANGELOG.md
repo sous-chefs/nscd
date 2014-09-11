@@ -2,6 +2,9 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
+v0.12.0
+-------
+- Manage /etc/nscd.conf with a template
 
 v0.11.0
 -------

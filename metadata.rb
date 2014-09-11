@@ -3,8 +3,7 @@ maintainer        'Opscode, Inc.'
 maintainer_email  'cookbooks@opscode.com'
 license           'Apache 2.0'
 description       'Installs and configures nscd'
-version           '0.11.1'
-suggests          'openldap'
+version           '0.12.0'
 
 recipe 'nscd', 'Installs and configures nscd'
 
