@@ -1,0 +1,49 @@
+#
+# /etc/nscd.conf
+#
+# Name Service Cache config file.  This file is needed by nscd.
+#
+# Legal entries are:
+#
+#       logfile                 <file>
+#       debug-level             <level>
+#       threads                 <initial #threads to use>
+#       max-threads             <maximum #threads to use>
+#       server-user             <user to run server as instead of root>.
+#                               server-user is ignored if nscd is started with -S parameters
+#       stat-user               <user who is allowed to request statistics>
+#       reload-count            unlimited|<number>
+#       paranoia                <yes|no>
+#       restart-interval        <time in seconds>
+#
+#       enable-cache            <service> <yes|no>
+#       positive-time-to-live   <service> <time in seconds>
+#       negative-time-to-live   <service> <time in seconds>
+#       suggested-size          <service> <prime number>
+#       check-files             <service> <yes|no>
+#       persistent              <service> <yes|no>
+#       shared                  <service> <yes|no>
+#       max-db-size             <service> <number bytes>
+#       auto-propagate          <service> <yes|no>
+#
+# Currently supported cache names (services): passwd, group, hosts, services
+#
+
+logfile			<%= @settings['logfile'] %>
+threads			<%= @settings['threads'] %>
+max-threads		<%= @settings['max_threads'] %>
+server-user		<%= @settings['server_user'] %>
+stat-user		<%= @settings['stat_user'] %>
+debug-level		<%= @settings['debug_level'] %>
+reload-count		<%= @settings['reload_count'] %>
+paranoia		<%= @settings['paranoia'] %>
+restart-interval	<%= @settings['restart_interval'] %>
+
+<% @settings['databases'].each do |database| %>
+
+# <%= database %> database
+<% @settings[database].each do |param,value| %>
+<% param = param.gsub(/_/, '-') %>
+<%= param %>		<%= database %>	<%= value %>
+<% end %>
+<% end %>

@@ -34,3 +34,14 @@ end
     action  :nothing
   end
 end
+
+template '/etc/nscd.conf' do
+  source 'nscd.conf.erb'
+  owner 'root'
+  group 'root'
+  mode 00644
+  variables(
+    :settings => node['nscd']
+  )
+  notifies :restart, 'service[nscd]'
+end
