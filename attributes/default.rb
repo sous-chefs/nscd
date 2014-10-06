@@ -19,6 +19,7 @@
 
 # Possible values: nscd, unscd, gnscd
 default['nscd']['package'] = 'nscd'
+default['nscd']['version'] = nil
 
 # nscd.conf parameters
 default['nscd']['logfile'] = '/var/log/nscd'
