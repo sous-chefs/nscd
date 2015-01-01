@@ -31,6 +31,7 @@ end
 %w[passwd group].each do |cmd|
   execute "nscd-clear-#{cmd}" do
     command "/usr/sbin/nscd -i #{cmd}"
+    retries 2
     action  :nothing
   end
 end
