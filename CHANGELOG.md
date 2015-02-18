@@ -9,13 +9,13 @@ v0.12.0
 v0.11.0
 -------
 ### Improvement
-- **[COOK-3607](https://tickets.opscode.com/browse/COOK-3607)** - Add support for different `nscd` packages
+- **[COOK-3607](https://tickets.chef.io/browse/COOK-3607)** - Add support for different `nscd` packages
 
 
 v0.10.0
 -------
 ### Improvement
-- **[COOK-1915](https://tickets.opscode.com/browse/COOK-1915)** - Add SmartOS support
+- **[COOK-1915](https://tickets.chef.io/browse/COOK-1915)** - Add SmartOS support
 
 v0.9.0
 ------

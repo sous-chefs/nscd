@@ -1,6 +1,6 @@
 nscd Cookbook
 =============
-[![Build Status](https://secure.travis-ci.org/opscode-cookbooks/nscd.png?branch=master)](http://travis-ci.org/opscode-cookbooks/nscd)
+[![Build Status](https://secure.travis-ci.org/chef-cookbooks/nscd.png?branch=master)](http://travis-ci.org/chef-cookbooks/nscd)
 
 Installs and configures nscd.
 
@@ -65,7 +65,7 @@ License & Authors
 - Author:: Joshua Timberman
 
 ```text
-Copyright:: 2008-2013, Opscode, Inc
+Copyright:: 2008-2013, Chef Software, Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
