@@ -44,7 +44,7 @@ Each database has attributes, default depends on `SERVICE`, see attribute file.
 Recipes
 -------
 ### default
-Installs nscd, manages the nscd service and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
+Installs nscd, manages the nscd service, creates a system user and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
 
 
 Usage

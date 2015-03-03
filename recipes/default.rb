@@ -17,21 +17,30 @@
 # limitations under the License.
 #
 
+node.override['nscd']['package'] = 'nscd' unless platform_family?('debian')
+
 package 'nscd' do
   package_name node['nscd']['package']
   not_if { platform?('smartos') }
 end
 
-service 'nscd' do
-  service_name 'name-service-cache:default' if platform?('smartos')
-  supports :restart => true, :status => true
-  action   [:enable, :start]
+user node['nscd']['server_user'] do
+  comment 'nscd system user'
+  system true
+  shell '/bin/false'
 end
 
-%w[passwd group].each do |cmd|
+service 'nscd' do
+  service_name 'name-service-cache:default' if platform?('smartos')
+  service_name 'unscd' if platform_family?('debian') && node['nscd']['package'] == 'unscd'
+  supports :restart => true, :status => true
+  action [:enable, :start]
+end
+
+%w(passwd group).each do |cmd|
   execute "nscd-clear-#{cmd}" do
     command "/usr/sbin/nscd -i #{cmd}"
-    action  :nothing
+    action :nothing
   end
 end
 
