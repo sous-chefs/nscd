@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+node.override['nscd']['package'] = 'nscd' unless platform_family?('debian')
+
 package 'nscd' do
   package_name node['nscd']['package']
   not_if { platform?('smartos') }
