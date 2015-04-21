@@ -32,7 +32,7 @@ Development
 
 2. Install the dependencies using bundler:
 
-        $ bundle install
+        $ bundle install --path vendor/bundle
 
 3. Create a branch for your changes:
 
@@ -40,6 +40,8 @@ Development
 
 4. Make any changes
 5. Write tests to support those changes. It is highly recommended you write both unit and integration tests.
+1. Install the cookbooks and gems locally:
+    - `bundle exec berks vendor vendor/cookbook`
 6. Run the tests:
     - `bundle exec rspec`
     - `bundle exec foodcritic .`
