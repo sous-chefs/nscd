@@ -26,7 +26,7 @@ template '/etc/nscd.conf' do
   source 'nscd.conf.erb'
   owner 'root'
   group 'root'
-  mode 00644
+  mode '0644'
   variables(
     :settings => node['nscd']
   )
