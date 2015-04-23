@@ -7,10 +7,7 @@ version           '0.12.0'
 
 recipe 'nscd', 'Installs and configures nscd'
 
-supports 'amazon'
-supports 'centos'
-supports 'debian'
-supports 'oracle'
-supports 'redhat'
-supports 'scientific'
-supports 'ubuntu'
+%w(ubuntu debian fedora centos redhat oracle scientific amazon).each do |os|
+  supports os
+end
+
