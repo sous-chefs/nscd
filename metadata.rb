@@ -10,4 +10,3 @@ recipe 'nscd', 'Installs and configures nscd'
 %w(ubuntu debian fedora centos redhat oracle scientific amazon).each do |os|
   supports os
 end
-

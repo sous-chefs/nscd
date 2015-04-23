@@ -10,7 +10,7 @@ Requirements
 ### Platforms
 
 - Debian/Ubuntu
-- RHEL/CentOS
+- RHEL/CentOS/Fedora
 - SmartOS
 
 Attributes
