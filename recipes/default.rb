@@ -39,7 +39,7 @@ service 'nscd' do
   action   [:enable, :start]
 end
 
-%w[passwd group].each do |cmd|
+%w[passwd group hosts].each do |cmd|
   execute "nscd-clear-#{cmd}" do
     command "/usr/sbin/nscd -i #{cmd}"
     action  :nothing
