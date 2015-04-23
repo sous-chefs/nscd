@@ -1,12 +1,9 @@
 AllCops:
-  Excludes:
-    - vendor/**
+  Exclude:
+    - vendor/**/*
+    - Guardfile
 
-ClassLength:
-  Enabled: false
-CyclomaticComplexity:
-  Max: 15
-Documentation:
+AlignParameters:
   Enabled: false
 Encoding:
   Enabled: false
@@ -15,6 +12,6 @@ HashSyntax:
 LineLength:
   Enabled: false
 MethodLength:
-  Enabled: false
-TrailingComma:
+  Max: 30
+SingleSpaceBeforeFirstArg:
   Enabled: false

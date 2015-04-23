@@ -32,7 +32,7 @@ default['nscd']['paranoia'] = 'no'
 default['nscd']['restart_interval'] = 3600
 
 # list of databases which to configure
-default['nscd']['databases'] = %w[passwd group hosts services netgroup]
+default['nscd']['databases'] = %w(passwd group hosts services netgroup)
 
 # passwd database
 default['nscd']['passwd']['enable_cache'] = 'yes'
