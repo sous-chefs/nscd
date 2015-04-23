@@ -1,6 +1,5 @@
 require 'serverspec'
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
+set :backend, :exec
 
 describe 'nscd::default' do
   it 'has the nscd service up and running' do

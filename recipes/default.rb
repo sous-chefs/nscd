@@ -22,6 +22,17 @@ package 'nscd' do
   not_if { platform?('smartos') }
 end
 
+template '/etc/nscd.conf' do
+  source 'nscd.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  variables(
+    :settings => node['nscd']
+  )
+  notifies :restart, 'service[nscd]'
+end
+
 service 'nscd' do
   service_name 'name-service-cache:default' if platform?('smartos')
   supports :restart => true, :status => true
@@ -33,15 +44,4 @@ end
     command "/usr/sbin/nscd -i #{cmd}"
     action  :nothing
   end
-end
-
-template '/etc/nscd.conf' do
-  source 'nscd.conf.erb'
-  owner 'root'
-  group 'root'
-  mode 00644
-  variables(
-    :settings => node['nscd']
-  )
-  notifies :restart, 'service[nscd]'
 end
