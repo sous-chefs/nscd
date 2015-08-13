@@ -1,9 +1,9 @@
-name              'nscd'
-maintainer        'Chef Software, Inc.'
-maintainer_email  'cookbooks@chef.io'
-license           'Apache 2.0'
-description       'Installs and configures nscd'
-version           '0.13.0'
+name 'nscd'
+maintainer 'Chef Software, Inc.'
+maintainer_email 'cookbooks@chef.io'
+license 'Apache 2.0'
+description 'Installs and configures nscd'
+version '0.13.0'
 
 recipe 'nscd', 'Installs and configures nscd'
 
