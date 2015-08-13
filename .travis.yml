@@ -1,9 +1,12 @@
+sudo: false
+cache: bundler
 rvm:
-  - 1.9.3
-  - 2.0.0
+  - 2.0
+  - 2.1
+  - 2.2
 before_script:
   - bundle exec berks install
 script:
   - bundle exec foodcritic -f any .
-  - bundle exec rspec --color --format progress
   - bundle exec rubocop
+  - bundle exec rspec --color --format progress
