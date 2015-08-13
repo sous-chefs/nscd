@@ -3,13 +3,13 @@
 We are glad you want to contribute to Chef Cookbooks! The first
 step is the desire to improve the project. If you're new to the Chef
 community, please read
-[How to become a contributor](https://supermarket.getchef.com/become-a-contributor)
+[How to become a contributor](https://supermarket.chef.io/become-a-contributor)
 on the Supermarket website for more information.
 
 ## Quick-contribute
 
-* Create an account on the [Supermarket](http://supermarket.getchef.com)
-* Sign our contributor agreement (CLA)[online](https://supermarket.getchef.com/ccla-signatures/new)
+* Create an account on the [Supermarket](http://supermarket.chef.io)
+* Sign our contributor agreement (CLA)[online](https://supermarket.chef.io/ccla-signatures/new)
 * Visit the Github page for the project.
 * Fork the repository
 * Create a feature branch for your change.
@@ -43,10 +43,10 @@ It only takes a few minutes to complete a CLA, and you retain the
 copyright to your contribution.
 
 You can complete our contributor agreement (CLA)
-[online](https://supermarket.getchef.com/ccla-signatures/new) If
+[online](https://supermarket.chef.io/ccla-signatures/new) If
 you're contributing on behalf of your employer, have your employer
 fill out our
-[Corporate CLA](https://supermarket.getchef.com/ccla-signatures/new)
+[Corporate CLA](https://supermarket.chef.io/ccla-signatures/new)
 instead.
 
 ## Using git
@@ -149,7 +149,7 @@ The versioning for Chef Cookbook projects is X.Y.Z.
 
 Releases of Chef's cookbooks are usually announced on the Chef user
 mailing list. Releases of several cookbooks may be batched together
-and announced on the [Chef Blog](http://www.getchef.com/blog).
+and announced on the [Chef Blog](http://www.chef.io/blog).
 
 ## Working with the community
 
@@ -162,7 +162,7 @@ other members of the Chef community:
 * #chef and #chef-hacking IRC channels on irc.freenode.net
 * [Community Cookbook site](http://community.opscode.com)
 * [Chef wiki](http://wiki.opscode.com/display/chef)
-* Chef, Inc [product page](http://www.getchef.com/chef)
+* Chef, Inc [product page](http://www.chef.io/chef)
 
 ## Cookbook Contribution Do's and Don't's
 
