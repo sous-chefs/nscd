@@ -10,10 +10,15 @@ Installs and configures nscd.
 Requirements
 ------------
 ### Platforms
-
 - Debian/Ubuntu
 - RHEL/CentOS/Fedora
 - SmartOS
+
+### Chef
+- Chef 11+
+
+### Cookbooks
+- none
 
 Attributes
 ----------
