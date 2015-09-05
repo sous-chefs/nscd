@@ -19,6 +19,7 @@
 
 package 'nscd' do
   package_name node['nscd']['package']
+  version node['nscd']['version'] unless node['nscd']['version'].nil?
   not_if { platform?('smartos') }
 end
 

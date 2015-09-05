@@ -18,6 +18,7 @@ Requirements
 Attributes
 ----------
 * `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
+* `default['nscd']['version']` - nscd version, defaults to `nil`. If set to `nil`, the latest will be installed.
 
 The following attributes affect configuration of `/etc/nscd.conf`.
 * `default['nscd']['logfile']`. Specifies name of the file to which debug info should be written. Default `/var/log/nscd`
