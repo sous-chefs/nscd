@@ -28,14 +28,14 @@ template '/etc/nscd.conf' do
   group 'root'
   mode '0644'
   variables(
-    :settings => node['nscd']
+    settings: node['nscd']
   )
   notifies :restart, 'service[nscd]'
 end
 
 service 'nscd' do
   service_name 'name-service-cache:default' if platform?('smartos')
-  supports :restart => true, :status => true
+  supports restart: true, status: true
   action   [:enable, :start]
 end
 
