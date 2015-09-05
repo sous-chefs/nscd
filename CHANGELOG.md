@@ -2,6 +2,18 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
+v1.0.0 (09-05-2015)
+-------------------
+* Minimum supported Chef release is now 11
+* Added `default['nscd']['version']` to control the version of the nscd package to install
+* Removed use of Ruby 1.8.7 hash rockets
+* Added source_url and issue_url metadata
+* Added additional platforms to the Kitchen CI config
+* Removed Ruby 1.9.3 from Travis CI and add 2.1 and 2.2
+* Removed the version constraint on apt in the Berkshelf file
+* Updated developent dependencies and break Gemfile into groups
+* Added cookbook version badge to the readme
+
 v0.13.0
 -------
 * Template the nscd config before starting the service so we don't have to start then restart
