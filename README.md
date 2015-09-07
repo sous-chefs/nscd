@@ -1,7 +1,7 @@
 nscd Cookbook
 =============
 
-[![Build Status](https://travis-ci.org/opscode-cookbooks/nscd.svg?branch=master)](https://travis-ci.org/opscode-cookbooks/nscd)
+[![Build Status](https://travis-ci.org/chef-cookbooks/nscd.svg?branch=master)](https://travis-ci.org/chef-cookbooks/nscd)
 [![Cookbook Version](https://img.shields.io/cookbook/v/nscd.svg)](https://supermarket.chef.io/cookbooks/nscd)
 
 Installs and configures nscd.
