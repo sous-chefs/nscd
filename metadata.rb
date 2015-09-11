@@ -11,5 +11,6 @@ recipe 'nscd', 'Installs and configures nscd'
 %w(ubuntu debian fedora centos redhat oracle scientific amazon).each do |os|
   supports os
 end
+
 source_url 'https://github.com/chef-cookbooks/nscd' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/nscd/issues' if respond_to?(:issues_url)
