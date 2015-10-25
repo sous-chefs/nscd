@@ -2,7 +2,18 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
-v1.0.0 (09-05-2015)
+v1.0.1 (2015-10-24)
+-------------------
+* Added additional platforms added to Test Kitchen config
+* Added the standard Chef Rubocop config
+* Updated Travis CI to use Chef DK for testing instead of Gems
+* Updated contributing and testing docs
+* Updated testing deps in the Gemfile
+* Added maintainers.toml and maintainers.md
+* Added a Rakefile for simplified testing
+* Updated links to the Github org to point to the new chef-cookbooks org
+
+v1.0.0 (2015-09-05)
 -------------------
 * Minimum supported Chef release is now 11
 * Added `default['nscd']['version']` to control the version of the nscd package to install
