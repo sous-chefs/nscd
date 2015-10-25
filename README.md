@@ -60,22 +60,31 @@ Custom Resources
 ###clear_cache
 The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
 
-####Clearing Caches
+#### Actions
+- :clear: clears the nscd database cache
+
+#### Properties
+- databases: Array of nscd databases (defaults to passwd group hosts services, and netgroup)
+
+#### Examples
+
+Clearing caches of passwd, and group databases
+
 ```ruby
 nscd_clear_cache 'clear-nscd-caches' do
   databases %w(passwd group)
 end
 ```
 
-####Notifying Cache Clearing
+Clearing caches of passwd, and group databases via notification so the databases are only cleared when another change is made.
+
 ```ruby
 nscd_clear_cache 'clear-nscd-caches' do
   databases %w(passwd group)
   action :nothing
 end
 
-cookbook_file '/etc/nsswitch.conf' do
-  source   'nsswitch.conf'
+template '/etc/nsswitch.conf' do
   notifies :run, 'nscd_clear_cache[clear-nscd-caches]', :immediately
 end
 ```
