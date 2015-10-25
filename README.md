@@ -4,7 +4,7 @@ nscd Cookbook
 [![Build Status](https://travis-ci.org/chef-cookbooks/nscd.svg?branch=master)](https://travis-ci.org/chef-cookbooks/nscd)
 [![Cookbook Version](https://img.shields.io/cookbook/v/nscd.svg)](https://supermarket.chef.io/cookbooks/nscd)
 
-Installs and configures nscd.
+Installs and configures name service cache daemon (nscd). Provides a custom resource for clearing nscd database caches.
 
 
 Requirements
