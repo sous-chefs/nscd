@@ -15,10 +15,10 @@ Requirements
 - SmartOS
 
 ### Chef
-- Chef 11+
+- Chef 12+
 
 ### Cookbooks
-- none
+- compat_resource
 
 Attributes
 ----------
@@ -55,17 +55,36 @@ Recipes
 Installs nscd, manages the nscd service and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
 
 
-Usage
------
-If you're using nscd, add this recipe. If you need to notify the clear commands, e.g.,
+Custom Resources
+-------
+###clear_cache
+The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
 
+####Clearing Caches
 ```ruby
-cookbook_file '/etc/nsswitch.conf' do
-  source   'nsswitch.conf'
-  notifies :run, 'execute[nscd-clear-passwd]', :immediately
-  notifies :run, 'execute[nscd-clear-group]', :immediately
+nscd_clear_cache 'clear-nscd-caches' do
+  databases %w(passwd group)
 end
 ```
+
+####Notifying Cache Clearing
+```ruby
+nscd_clear_cache 'clear-nscd-caches' do
+  databases %w(passwd group)
+  action :nothing
+end
+
+cookbook_file '/etc/nsswitch.conf' do
+  source   'nsswitch.conf'
+  notifies :run, 'nscd_clear_cache[clear-nscd-caches]', :immediately
+end
+```
+
+Usage
+-----
+If you're using nscd, add this recipe. If you need to clear database cache within other recipes using the nscd_clear_cache custom resource
+
+Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with a
 
 
 License & Authors
