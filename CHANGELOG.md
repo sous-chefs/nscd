@@ -2,6 +2,10 @@ nscd Cookbook CHANGELOG
 =======================
 This file is used to list changes made in each version of the nscd cookbook.
 
+v2.0.0 (2015-10-24)
+-------------------
+* Breaking change: Changed the execute block for performing nscd database cache clears in wrapper cookbooks to a Chef 12.5 custom resource that can more easily clear the cache for multiple databases.  This will require updating cookbooks that notified to the previous execute block and requires Chef 12.0 or greater.
+
 v1.0.1 (2015-10-24)
 -------------------
 * Added additional platforms added to Test Kitchen config
