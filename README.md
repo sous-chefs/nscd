@@ -47,7 +47,7 @@ Each database has attributes, default depends on `SERVICE`, see attribute file.
 Installs nscd, manages the nscd service and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
 
 ## Custom Resources
-###clear_cache The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
+clear_cache The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
 
 ### Actions
 - :clear: clears the nscd database cache
