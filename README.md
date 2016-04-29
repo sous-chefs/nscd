@@ -78,9 +78,9 @@ end
 ```
 
 ## Usage
-If you're using nscd, add this recipe. If you need to clear database cache within other recipes using the nscd_clear_cache custom resource
+If you're using nscd, add this recipe. If you need to clear database cache within other recipes using the `nscd_clear_cache` custom resource.
 
-Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with a
+Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with the `nscd_clear_cache` custom resource.
 
 ## License & Authors
 
