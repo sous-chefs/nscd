@@ -87,4 +87,3 @@ suites:
     attributes:
       nscd:
         server_user: "nobody"
-

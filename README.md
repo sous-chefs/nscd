@@ -1,25 +1,34 @@
 # nscd Cookbook
+
 [![Build Status](https://travis-ci.org/chef-cookbooks/nscd.svg?branch=master)](https://travis-ci.org/chef-cookbooks/nscd) [![Cookbook Version](https://img.shields.io/cookbook/v/nscd.svg)](https://supermarket.chef.io/cookbooks/nscd)
 
 Installs and configures name service cache daemon (nscd). Provides a custom resource for clearing nscd database caches.
 
 ## Requirements
+
 ### Platforms
-- Debian/Ubuntu
-- RHEL/CentOS/Fedora
+
+- Debian 7+
+- Ubuntu 12.04+
+- RHEL/CentOS 5+
+- Fedora
 - SmartOS
 
 ### Chef
+
 - Chef 12+
 
 ### Cookbooks
+
 - compat_resource
 
 ## Attributes
+
 - `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
 - `default['nscd']['version']` - nscd version, defaults to `nil`. If set to `nil`, the latest will be installed.
 
 The following attributes affect configuration of `/etc/nscd.conf`.
+
 - `default['nscd']['logfile']`. Specifies name of the file to which debug info should be written. Default `/var/log/nscd`
 - `default['nscd']['threads']`. This is the number of threads that are started to wait for requests. At least five threads will always be created. Default `4`
 - `default['nscd']['max_threads']`. Specifies the maximum number of threads. Default `32`
@@ -32,6 +41,7 @@ The following attributes affect configuration of `/etc/nscd.conf`.
 - `default['nscd']['databases']`. List of databases to configure. Default `%[passwd group hosts services netgroup`]
 
 Each database has attributes, default depends on `SERVICE`, see attribute file.
+
 - `default['nscd'][SERVICE]['enable_cache']`. Enables or disables the specified `SERVICE` cache.
 - `default['nscd'][SERVICE]['positive_time_to_live']`. Sets the TTL (time-to-live) for positive entries (successful queries) in the specified cache for service. Value is in seconds. Larger values increase cache hit rates and reduce mean response times, but increase problems with cache coherence.
 - `default['nscd'][SERVICE]['negative_time_to_live']`. Sets the TTL (time-to-live) for negative entries (unsuccessful queries) in the specified cache for service. Value is in seconds. Can result in significant performance improvements if there are several files owned by UIDs (user IDs) not in system databases (for example untarring the Linux kernel sources as root); should be kept small to reduce cache coherency problems.
@@ -43,19 +53,25 @@ Each database has attributes, default depends on `SERVICE`, see attribute file.
 - `default['nscd'][SERVICE]['auto_propagate']`. When set to `no` for `passwd` or `group` service, then the `.byname` requests are not added to `passwd.byuid` or `group.bygid` cache. This can help with tables containing multiple records for the same ID. This option is valid only for services `passwd` and `group`.
 
 ## Recipes
+
 ### default
+
 Installs nscd, manages the nscd service and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
 
 ## Custom Resources
+
 clear_cache The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
 
 ### Actions
+
 - :clear: clears the nscd database cache
 
 ### Properties
+
 - databases: Array of nscd databases (defaults to passwd group hosts services, and netgroup)
 
 ### Examples
+
 Clearing caches of passwd, and group databases
 
 ```ruby
@@ -78,6 +94,7 @@ end
 ```
 
 ## Usage
+
 If you're using nscd, add this recipe. If you need to clear database cache within other recipes using the `nscd_clear_cache` custom resource.
 
 Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with the `nscd_clear_cache` custom resource.

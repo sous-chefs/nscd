@@ -40,7 +40,7 @@ reload-count		<%= @settings['reload_count'] %>
 paranoia		<%= @settings['paranoia'] %>
 restart-interval	<%= @settings['restart_interval'] %>
 
-<% @settings['databases'].each do |database| %>
+<% @databases.each do |database| %>
 
 # <%= database %> database
 <% @settings[database].each do |param,value| %>
