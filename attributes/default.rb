@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+require 'etc'
+
 # Possible values: nscd, unscd, gnscd
 default['nscd']['package'] = 'nscd'
 default['nscd']['version'] = nil
@@ -25,7 +27,13 @@ default['nscd']['version'] = nil
 default['nscd']['logfile'] = '/var/log/nscd'
 default['nscd']['threads'] = 4
 default['nscd']['max_threads'] = 32
-default['nscd']['server_user'] = 'nscd'
+default['nscd']['server_user'] =
+  begin
+    Etc.getpwnam('nscd')
+    'nscd'
+  rescue ArgumentError
+    'nobody'
+  end
 default['nscd']['stat_user'] = 'root'
 default['nscd']['debug_level'] = 0
 default['nscd']['reload_count'] = 5
