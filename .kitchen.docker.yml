@@ -78,12 +78,6 @@ suites:
   - name: default
     run_list:
       - recipe[nscd::default]
-    attributes:
-      nscd:
-        server_user: "nobody"
   - name: clear-cache
     run_list:
       - recipe[test::clear_cache]
-    attributes:
-      nscd:
-        server_user: "nobody"
