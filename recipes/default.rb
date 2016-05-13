@@ -32,10 +32,10 @@ template '/etc/nscd.conf' do
     settings: node['nscd'],
     databases: sanitize_databases(node['nscd']['databases'])
   )
-  notifies :restart, 'service[nscd]'
+  notifies :restart, "service[#{node['nscd']['package']}]"
 end
 
-service 'nscd' do
+service node['nscd']['package'] do
   service_name 'name-service-cache:default' if platform?('smartos')
   supports restart: true, status: true
   action   [:enable, :start]
