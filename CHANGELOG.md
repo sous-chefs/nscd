@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## v4.0.0 (2016-05-12)
+
+- The NSCD user / group is now set to nscd if the nscd user/group exist and if not it will run as nobody. This is most likely the desired behavior for users, but may be a surprise based on the previous behavior.
+
 ## v3.0.0 (2016-04-29)
 
 - NSCD database values are now sanitized to remove incompatible databases on RHEL < 6 and Debian < 8\. services and netgroup will now be removed as necessary
