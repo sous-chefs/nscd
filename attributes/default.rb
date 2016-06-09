@@ -20,7 +20,7 @@
 require 'etc'
 
 # nscd cookbook(incase you need to override anything in a wrapper)
-default['nscd']['cookbook'] = 'nscd'
+default['nscd']['template_cookbook'] = 'nscd'
 
 # Possible values: nscd, unscd, gnscd
 default['nscd']['package'] = 'nscd'
