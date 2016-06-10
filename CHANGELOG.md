@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## v4.1.0 (2016-06-10)
+
+- Add a new attribute 'template_cookbook' to allow specifying a cookbook containing the nscd config template for wrapper cookbooks
+
 ## v4.0.0 (2016-05-12)
 
 - The NSCD user / group is now set to nscd if the nscd user/group exist and if not it will run as nobody. This is most likely the desired behavior for users, but may be a surprise based on the previous behavior.
