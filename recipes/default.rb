@@ -32,6 +32,7 @@ template '/etc/nscd.conf' do
     settings: node['nscd'],
     databases: sanitize_databases(node['nscd']['databases'])
   )
+  cookbook node['nscd']['template_cookbook']
   notifies :restart, 'service[nscd]'
 end
 

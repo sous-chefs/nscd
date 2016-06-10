@@ -19,6 +19,9 @@
 
 require 'etc'
 
+# nscd cookbook(in case you need to override anything in a wrapper)
+default['nscd']['template_cookbook'] = 'nscd'
+
 # Possible values: nscd, unscd, gnscd
 default['nscd']['package'] = 'nscd'
 default['nscd']['version'] = nil

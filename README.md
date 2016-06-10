@@ -23,7 +23,7 @@ Installs and configures name service cache daemon (nscd). Provides a custom reso
 - compat_resource
 
 ## Attributes
-
+- `default['nscd']['template_cookbook']` - nscd cookbook name. You can override this attribute if you want to pass in a custom template for nscd.conf
 - `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
 - `default['nscd']['version']` - nscd version, defaults to `nil`. If set to `nil`, the latest will be installed.
 
