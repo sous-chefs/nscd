@@ -16,7 +16,7 @@ Installs and configures name service cache daemon (nscd). Provides a custom reso
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
