@@ -12,9 +12,6 @@ recipe 'nscd::default', 'Installs and configures nscd'
   supports os
 end
 
-depends 'compat_resource', '>= 12.16.3'
-
 source_url 'https://github.com/chef-cookbooks/nscd'
 issues_url 'https://github.com/chef-cookbooks/nscd/issues'
-
-chef_version '>= 12.1'
+chef_version '>= 12.5' if respond_to?(:chef_version)

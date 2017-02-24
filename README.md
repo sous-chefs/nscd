@@ -16,13 +16,14 @@ Installs and configures name service cache daemon (nscd). Provides a custom reso
 
 ### Chef
 
-- Chef 12.1+
+- Chef 12.5+
 
 ### Cookbooks
 
-- compat_resource
+- none
 
 ## Attributes
+
 - `default['nscd']['template_cookbook']` - nscd cookbook name. You can override this attribute if you want to pass in a custom template for nscd.conf
 - `default['nscd']['package']` - nscd package name, defaults to `nscd`. Other variants include: `unscd`, `gnscd`
 - `default['nscd']['version']` - nscd version, defaults to `nil`. If set to `nil`, the latest will be installed.
@@ -99,13 +100,9 @@ If you're using nscd, add this recipe. If you need to clear database cache withi
 
 Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with the `nscd_clear_cache` custom resource.
 
-## License & Authors
+## License
 
 ```
-Author:: Joshua Timberman (<joshua@chef.io>)
-
-Copyright:: 2009-2016, Chef Software, Inc
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -118,3 +115,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+## Cookbook Engineering Team
+
+This cookbook is maintained by Chef's Cookbook Engineering team.
