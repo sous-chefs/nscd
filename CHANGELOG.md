@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## 5.0.0 (2017-02-23)
+
+- Require Chef 12.5+ and remove compat_resource dependency
+
 ## v4.1.0 (2016-06-10)
 
 - Add a new attribute 'template_cookbook' to allow specifying a cookbook containing the nscd config template for wrapper cookbooks
