@@ -1,6 +1,3 @@
-require 'serverspec'
-set :backend, :exec
-
 describe 'nscd::default' do
   it 'has the nscd service up and running' do
     expect(service('nscd')).to be_enabled
