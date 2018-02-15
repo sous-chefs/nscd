@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## 5.0.1 (2018-02-15)
+
+- Test with delivery local mode and cleanup the test cookbook
+- Don't use kind_of in the custom resource (FC117)
+- Fix a bad example in the readme
+
 ## 5.0.0 (2017-02-23)
 
 - Require Chef 12.5+ and remove compat_resource dependency
