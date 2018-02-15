@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-property :databases, kind_of: Array, default: %w(passwd group hosts services netgroup)
+property :databases, Array, default: %w(passwd group hosts services netgroup)
 
 action :clear do
   databases.each do |cmd|
