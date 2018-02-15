@@ -90,7 +90,7 @@ nscd_clear_cache 'clear-nscd-caches' do
 end
 
 template '/etc/nsswitch.conf' do
-  notifies :run, 'nscd_clear_cache[clear-nscd-caches]', :immediately
+  notifies :clear, 'nscd_clear_cache[clear-nscd-caches]', :immediately
 end
 ```
 
