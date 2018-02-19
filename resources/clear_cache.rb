@@ -20,7 +20,7 @@
 property :databases, Array, default: %w(passwd group hosts services netgroup)
 
 action :clear do
-  databases.each do |cmd|
+  new_resource.databases.each do |cmd|
     execute "nscd-clear-#{cmd}" do
       command "/usr/sbin/nscd -i #{cmd}"
       action :run
