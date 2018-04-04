@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## 5.0.2 (2018-04-04)
+
+- Remove apt from the Berksfile
+- Travis: Test the custom resource and test Debian
+- Resolve Chef 14 deprecation
+
 ## 5.0.1 (2018-02-15)
 
 - Test with delivery local mode and cleanup the test cookbook
