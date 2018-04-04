@@ -18,12 +18,14 @@ branches:
 services: docker
 
 env:
-  matrix: # debian not tested due to travis only failures
-  - INSTANCE=default-ubuntu-1404
-  - INSTANCE=default-ubuntu-1604
-  - INSTANCE=default-centos-6
-  - INSTANCE=default-centos-7
-  - INSTANCE=default-fedora-latest
+  matrix:
+  - INSTANCE=clear-cache-debian-8
+  - INSTANCE=clear-cache-debian-9
+  - INSTANCE=clear-cache-ubuntu-1404
+  - INSTANCE=clear-cache-ubuntu-1604
+  - INSTANCE=clear-cache-centos-6
+  - INSTANCE=clear-cache-centos-7
+  - INSTANCE=clear-cache-fedora-latest
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
