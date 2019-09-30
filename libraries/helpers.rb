@@ -2,9 +2,9 @@
 def sanitize_databases(databases)
   sanitized_dbs = databases.to_a # avoid node objects are read only warnings
 
-  sanitized_dbs.delete('netgroup') if node['platform'] == 'debian' && node['platform_version'].to_i < 8
+  sanitized_dbs.delete('netgroup') if platform?('debian') && node['platform_version'].to_i < 8
 
-  if node['platform_family'] == 'rhel' && node['platform_version'].to_i < 6
+  if platform_family?('rhel') && node['platform_version'].to_i < 6
     sanitized_dbs.delete('netgroup')
     sanitized_dbs.delete('services')
   end
