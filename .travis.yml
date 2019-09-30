@@ -18,7 +18,6 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=clear-cache-debian-8
   - INSTANCE=clear-cache-debian-9
   - INSTANCE=clear-cache-debian-10
   - INSTANCE=clear-cache-ubuntu-1604
