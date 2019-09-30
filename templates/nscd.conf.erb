@@ -34,17 +34,17 @@ logfile			<%= @settings['logfile'] %>
 threads			<%= @settings['threads'] %>
 max-threads		<%= @settings['max_threads'] %>
 server-user		<%= nscd_user %>
-stat-user		<%= @settings['stat_user'] %>
+stat-user			<%= @settings['stat_user'] %>
 debug-level		<%= @settings['debug_level'] %>
 reload-count		<%= @settings['reload_count'] %>
-paranoia		<%= @settings['paranoia'] %>
-restart-interval	<%= @settings['restart_interval'] %>
+paranoia			<%= @settings['paranoia'] %>
+restart-interval		<%= @settings['restart_interval'] %>
 
 <% @databases.each do |database| %>
 
 # <%= database %> database
 <% @settings[database].each do |param,value| %>
 <% param = param.gsub(/_/, '-') %>
-<%= param %>		<%= database %>	<%= value %>
+<%= param %><%= 23 - param.length > 0 ? ' ' * (23 - param.length) : ' ' %><%= database %> <%= value %>
 <% end %>
 <% end %>
