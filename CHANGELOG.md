@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## 5.1.0 (2019-09-30)
+
+- The running user is now calculated at converge time which prevents failures on systems that don't have the nscd package before the chef-client run has started.
+- Columns in the config are now somewhat aligned, which prevents a hard to read diff on the first chef-client run
+- Added Ubuntu 18.04 / Debian 10 testing to Travis
+- Added support and testing for openSUSE 42 / 15
+
 ## 5.0.2 (2018-04-04)
 
 - Remove apt from the Berksfile
