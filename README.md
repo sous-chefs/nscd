@@ -11,6 +11,7 @@ Installs and configures name service cache daemon (nscd). Provides a custom reso
 - Debian 7+
 - Ubuntu 12.04+
 - RHEL/CentOS 5+
+- openSUSE
 - Fedora
 - SmartOS
 
