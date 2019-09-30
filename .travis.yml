@@ -20,8 +20,8 @@ env:
   matrix:
   - INSTANCE=clear-cache-debian-8
   - INSTANCE=clear-cache-debian-9
-  - INSTANCE=clear-cache-ubuntu-1404
   - INSTANCE=clear-cache-ubuntu-1604
+  - INSTANCE=clear-cache-ubuntu-1804
   - INSTANCE=clear-cache-centos-6
   - INSTANCE=clear-cache-centos-7
   - INSTANCE=clear-cache-fedora-latest
