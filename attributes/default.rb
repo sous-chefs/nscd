@@ -30,13 +30,7 @@ default['nscd']['version'] = nil
 default['nscd']['logfile'] = '/var/log/nscd'
 default['nscd']['threads'] = 4
 default['nscd']['max_threads'] = 32
-default['nscd']['server_user'] =
-  begin
-    Etc.getpwnam('nscd')
-    'nscd'
-  rescue ArgumentError
-    'nobody'
-  end
+default['nscd']['server_user'] = nil # the default value is set via helper at converge. 'nscd' if available, otherwise it's 'nobody'
 default['nscd']['stat_user'] = 'root'
 default['nscd']['debug_level'] = 0
 default['nscd']['reload_count'] = 5
