@@ -26,6 +26,8 @@ env:
   - INSTANCE=clear-cache-centos-6
   - INSTANCE=clear-cache-centos-7
   - INSTANCE=clear-cache-fedora-latest
+  - INSTANCE=clear-cache-opensuse-leap-42
+  - INSTANCE=clear-cache-opensuse-leap-15
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
