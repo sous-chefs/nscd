@@ -4,6 +4,7 @@ This file is used to list changes made in each version of the nscd cookbook.
 
 ## Unreleased
 
+- Sous Chefs Adoption
 - Cookstyle fixes
 
 ## 5.1.0 (2019-09-30)

@@ -17,8 +17,8 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 ### Platforms
 
 - Debian 9+
-- Ubuntu 16.04+
-- RHEL/CentOS 5+
+- Ubuntu 18.04+
+- RHEL/CentOS 7+
 - openSUSE
 - Fedora
 - SmartOS

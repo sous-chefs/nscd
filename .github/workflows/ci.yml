@@ -24,7 +24,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@master
       - name: Run yaml Lint
-        uses: actionshub/yamllint@master
+        uses: actionshub/yamllint@main
 
   mdl:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@master
       - name: Run Markdown Lint
-        uses: actionshub/markdownlint@master
+        uses: actionshub/markdownlint@main
 
   dokken:
     needs: [delivery]
@@ -58,7 +58,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@master
       - name: Install Chef
-        uses: actionshub/chef-install@master
+        uses: actionshub/chef-install@main
       - name: Dokken
         uses: actionshub/kitchen-dokken@master
         env:
