@@ -1,16 +1,24 @@
 # nscd Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/nscd.svg?branch=master)](https://travis-ci.org/chef-cookbooks/nscd) [![Cookbook Version](https://img.shields.io/cookbook/v/nscd.svg)](https://supermarket.chef.io/cookbooks/nscd)
+[![Cookbook Version](https://img.shields.io/cookbook/v/nscd.svg)](https://supermarket.chef.io/cookbooks/nscd)
+[![CI State](https://github.com/sous-chefs/nscd/workflows/ci/badge.svg)](https://github.com/sous-chefs/nscd/actions?query=workflow%3Aci)
+[![OpenCollective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
+[![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Installs and configures name service cache daemon (nscd). Provides a custom resource for clearing nscd database caches.
+
+## Maintainers
+
+This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of Chef cookbook maintainers working together to maintain important cookbooks. If you’d like to know more please visit [sous-chefs.org](https://sous-chefs.org/) or come chat with us on the Chef Community Slack in [#sous-chefs](https://chefcommunity.slack.com/messages/C2V7B88SF).
 
 ## Requirements
 
 ### Platforms
 
-- Debian 7+
-- Ubuntu 12.04+
-- RHEL/CentOS 5+
+- Debian 9+
+- Ubuntu 18.04+
+- RHEL/CentOS 7+
 - openSUSE
 - Fedora
 - SmartOS
@@ -60,9 +68,9 @@ Each database has attributes, default depends on `SERVICE`, see attribute file.
 
 Installs nscd, manages the nscd service and makes available commands to clear the nscd databases (passwd and group) so they can be notified in other recipes (such as when managing openldap).
 
-## Custom Resources
+## Resources
 
-clear_cache The clear_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
+clear\_cache The clear\_cache custom resource provides a simple way to clear the cache of 1 or more nscd databases from other recipes.
 
 ### Actions
 
@@ -101,22 +109,27 @@ If you're using nscd, add this recipe. If you need to clear database cache withi
 
 Note: Version 2.0 of this cookbook replaces notifying execute resource for clearing caches with the `nscd_clear_cache` custom resource.
 
-## License
+## Contributors
 
-```
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+This project exists thanks to all the people who [contribute.](https://opencollective.com/sous-chefs/contributors.svg?width=890&button=false)
 
-    http://www.apache.org/licenses/LICENSE-2.0
+### Backers
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+Thank you to all our backers!
 
-## Cookbook Engineering Team
+![https://opencollective.com/sous-chefs#backers](https://opencollective.com/sous-chefs/backers.svg?width=600&avatarHeight=40)
 
-This cookbook is maintained by Chef's Cookbook Engineering team.
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
+
+![https://opencollective.com/sous-chefs/sponsor/0/website](https://opencollective.com/sous-chefs/sponsor/0/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/1/website](https://opencollective.com/sous-chefs/sponsor/1/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/2/website](https://opencollective.com/sous-chefs/sponsor/2/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/3/website](https://opencollective.com/sous-chefs/sponsor/3/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/4/website](https://opencollective.com/sous-chefs/sponsor/4/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/5/website](https://opencollective.com/sous-chefs/sponsor/5/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/6/website](https://opencollective.com/sous-chefs/sponsor/6/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/7/website](https://opencollective.com/sous-chefs/sponsor/7/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/8/website](https://opencollective.com/sous-chefs/sponsor/8/avatar.svg?avatarHeight=100)
+![https://opencollective.com/sous-chefs/sponsor/9/website](https://opencollective.com/sous-chefs/sponsor/9/avatar.svg?avatarHeight=100)

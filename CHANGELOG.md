@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## Unreleased
+
+- Sous Chefs Adoption
+- Cookstyle fixes
+
 ## 5.1.0 (2019-09-30)
 
 - The running user is now calculated at converge time which prevents failures on systems that don't have the nscd package before the chef-client run has started.
@@ -18,16 +23,16 @@ This file is used to list changes made in each version of the nscd cookbook.
 ## 5.0.1 (2018-02-15)
 
 - Test with delivery local mode and cleanup the test cookbook
-- Don't use kind_of in the custom resource (FC117)
+- Don't use kind\_of in the custom resource (FC117)
 - Fix a bad example in the readme
 
 ## 5.0.0 (2017-02-23)
 
-- Require Chef 12.5+ and remove compat_resource dependency
+- Require Chef 12.5+ and remove compat\_resource dependency
 
 ## v4.1.0 (2016-06-10)
 
-- Add a new attribute 'template_cookbook' to allow specifying a cookbook containing the nscd config template for wrapper cookbooks
+- Add a new attribute 'template\_cookbook' to allow specifying a cookbook containing the nscd config template for wrapper cookbooks
 
 ## v4.0.0 (2016-05-12)
 
@@ -57,7 +62,7 @@ This file is used to list changes made in each version of the nscd cookbook.
 - Minimum supported Chef release is now 11
 - Added `default['nscd']['version']` to control the version of the nscd package to install
 - Removed use of Ruby 1.8.7 hash rockets
-- Added source_url and issue_url metadata
+- Added source\_url and issue\_url metadata
 - Added additional platforms to the Kitchen CI config
 - Removed Ruby 1.9.3 from Travis CI and add 2.1 and 2.2
 - Removed the version constraint on apt in the Berkshelf file
