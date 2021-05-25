@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
-## Unreleased
+## 6.0.0 - *2021-05-25*
 
 - Enable `unified_mode`
 - Bump `chef_version` constraint to >= 15.3
