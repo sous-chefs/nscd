@@ -4,6 +4,9 @@ This file is used to list changes made in each version of the nscd cookbook.
 
 ## Unreleased
 
+- Enable `unified_mode`
+- Bump `chef_version` constraint to >= 15.3
+
 ## 5.2.0 - *2021-02-26*
 
 - Sous Chefs Adoption
