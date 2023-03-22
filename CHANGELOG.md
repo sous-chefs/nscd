@@ -4,6 +4,9 @@ This file is used to list changes made in each version of the nscd cookbook.
 
 ## Unreleased
 
+- Update CI workflows
+- Standardise files with files in sous-chefs/repo-management
+
 ## 6.0.3 - *2022-02-08*
 
 - Remove delivery folder
