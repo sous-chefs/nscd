@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the nscd cookbook.
 
 ## Unreleased
 
+- Set nscd template variables to lazy
+
 ## 6.0.3 - *2022-02-08*
 
 - Remove delivery folder
