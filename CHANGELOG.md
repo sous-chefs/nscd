@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## Unreleased
+
 ## 6.0.4 - *2024-05-03*
 
 - Set nscd template variables to lazy
