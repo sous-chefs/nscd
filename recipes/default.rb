@@ -31,7 +31,7 @@ template '/etc/nscd.conf' do
   variables(lazy do
     {
       settings: node['nscd'],
-      databases: sanitize_databases(node['nscd']['databases'])
+      databases: sanitize_databases(node['nscd']['databases']),
     }
   end)
   cookbook node['nscd']['template_cookbook']
