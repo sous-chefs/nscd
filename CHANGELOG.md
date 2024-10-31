@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
-## Unreleased
+## 6.0.7 - *2024-10-31*
 
 ## 6.0.6 - *2024-05-03*
 
