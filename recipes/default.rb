@@ -28,10 +28,12 @@ template '/etc/nscd.conf' do
   owner 'root'
   group 'root'
   mode '0644'
-  variables(
-    settings: lazy { node['nscd'] },
-    databases: lazy { sanitize_databases(node['nscd']['databases']) }
-  )
+  variables(lazy do
+    {
+      settings: node['nscd'],
+      databases: sanitize_databases(node['nscd']['databases']),
+    }
+  end)
   cookbook node['nscd']['template_cookbook']
   notifies :restart, 'service[nscd]'
 end
