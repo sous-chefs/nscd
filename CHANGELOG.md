@@ -2,6 +2,22 @@
 
 This file is used to list changes made in each version of the nscd cookbook.
 
+## [7.0.0](https://github.com/sous-chefs/nscd/compare/v6.0.8...v7.0.0) (2026-05-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate nscd to custom resources ([#61](https://github.com/sous-chefs/nscd/issues/61))
+
+### Features
+
+* migrate nscd to custom resources ([#61](https://github.com/sous-chefs/nscd/issues/61)) ([0f40bd1](https://github.com/sous-chefs/nscd/commit/0f40bd1021816736ee043fb4886766e385fa1439))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#55](https://github.com/sous-chefs/nscd/issues/55)) ([dafc270](https://github.com/sous-chefs/nscd/commit/dafc2705cf7ccdd5683da4e18173e44b2ba4260e))
+
 ## [6.0.8](https://github.com/sous-chefs/nscd/compare/6.0.7...v6.0.8) (2025-10-15)
 
 
