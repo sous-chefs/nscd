@@ -9,7 +9,7 @@ name: ci
 
 jobs:
   lint-unit:
-    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@5.0.8
+    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@6.0.0
     permissions:
       actions: write
       checks: write
@@ -24,14 +24,18 @@ jobs:
       matrix:
         os:
           - "amazonlinux-2"
-          - "centos-7"
-          - "centos-8"
-          - "debian-9"
-          - "debian-10"
-          - "fedora-latest"
-          - "opensuse-leap-15"
-          - "ubuntu-1804"
-          - "ubuntu-2004"
+          - "amazonlinux-2023"
+          - "almalinux-8"
+          - "almalinux-9"
+          - "centos-stream-9"
+          - "debian-12"
+          - "debian-13"
+          - "oraclelinux-8"
+          - "oraclelinux-9"
+          - "rockylinux-8"
+          - "rockylinux-9"
+          - "ubuntu-2204"
+          - "ubuntu-2404"
         suite:
           - "default"
           - "clear-cache"
@@ -41,12 +45,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v5
       - name: Install Chef
-        uses: actionshub/chef-install@main
-      - name: Dokken
-        uses: actionshub/test-kitchen@main
+        uses: sous-chefs/.github/.github/actions/install-workstation@6.0.0
+      - name: Test Kitchen
+        run: chef exec kitchen test ${{ matrix.suite }}-${{ matrix.os }} --destroy=always
         env:
-          CHEF_LICENSE: accept-no-persist
+          CHEF_LICENSE: accept
           KITCHEN_LOCAL_YAML: kitchen.dokken.yml
-        with:
-          suite: ${{ matrix.suite }}
-          os: ${{ matrix.os }}

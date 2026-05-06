@@ -1,29 +1,54 @@
+---
 driver:
   name: vagrant
+  customize:
+    memory: 1024
 
 provisioner:
-  name: chef_zero
+  name: chef_infra
+  product_name: chef
+  product_version: latest
+  channel: stable
   deprecations_as_errors: true
-  chef_license: accept-no-persist
+  chef_license: accept
 
 verifier:
   name: inspec
+  sudo: true
 
 platforms:
   - name: amazonlinux-2
-  - name: centos-7
-  - name: centos-8
-  - name: debian-9
-  - name: debian-10
-  - name: fedora-latest
-  - name: opensuse-leap-15
-  - name: ubuntu-18.04
-  - name: ubuntu-20.04
+  - name: amazonlinux-2023
+  - name: almalinux-8
+  - name: almalinux-9
+  - name: centos-stream-9
+  - name: debian-12
+  - name: debian-13
+  - name: oraclelinux-8
+  - name: oraclelinux-9
+  - name: rockylinux-8
+  - name: rockylinux-9
+  - name: ubuntu-22.04
+  - name: ubuntu-24.04
+
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+  clear_cache: &clear_cache_run_list
+    - recipe[test::clear_cache]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
+  clear_cache: &clear_cache_verifier
+    inspec_tests:
+      - path: test/integration/clear-cache
 
 suites:
   - name: default
-    run_list:
-      - recipe[test::default]
+    run_list: *default_run_list
+    verifier: *default_verifier
   - name: clear-cache
-    run_list:
-      - recipe[test::clear_cache]
+    run_list: *clear_cache_run_list
+    verifier: *clear_cache_verifier

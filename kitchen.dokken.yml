@@ -1,18 +1,15 @@
+---
 driver:
   name: dokken
-  privileged: true  # because Docker and SystemD/Upstart
-  chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
-  chef_license: accept-no-persist
+  privileged: true
+  chef_image: chef/chefworkstation
+  chef_version: current
 
 transport:
   name: dokken
 
 provisioner:
   name: dokken
-  deprecations_as_errors: true
-
-verifier:
-  name: inspec
 
 platforms:
   - name: amazonlinux-2
@@ -20,57 +17,70 @@ platforms:
       image: dokken/amazonlinux-2
       pid_one_command: /usr/lib/systemd/systemd
 
-  - name: debian-9
+  - name: amazonlinux-2023
     driver:
-      image: dokken/debian-9
-      pid_one_command: /bin/systemd
-      intermediate_instructions:
-        - RUN /usr/bin/apt-get update
-
-  - name: debian-10
-    driver:
-      image: dokken/debian-10
-      pid_one_command: /bin/systemd
-      intermediate_instructions:
-        - RUN /usr/bin/apt-get update
-
-  - name: centos-7
-    driver:
-      image: dokken/centos-7
+      image: dokken/amazonlinux-2023
       pid_one_command: /usr/lib/systemd/systemd
 
-  - name: centos-8
+  - name: almalinux-8
     driver:
-      image: dokken/centos-8
+      image: dokken/almalinux-8
       pid_one_command: /usr/lib/systemd/systemd
 
-  - name: fedora-latest
+  - name: almalinux-9
     driver:
-      image: dokken/fedora-latest
+      image: dokken/almalinux-9
       pid_one_command: /usr/lib/systemd/systemd
 
-  - name: ubuntu-16.04
+  - name: centos-stream-9
     driver:
-      image: dokken/ubuntu-16.04
+      image: dokken/centos-stream-9
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: debian-12
+    driver:
+      image: dokken/debian-12
       pid_one_command: /bin/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
 
-  - name: ubuntu-18.04
+  - name: debian-13
     driver:
-      image: dokken/ubuntu-18.04
+      image: dokken/debian-13
       pid_one_command: /bin/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
 
-  - name: ubuntu-20.04
+  - name: oraclelinux-8
     driver:
-      image: dokken/ubuntu-20.04
+      image: dokken/oraclelinux-8
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: oraclelinux-9
+    driver:
+      image: dokken/oraclelinux-9
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: rockylinux-8
+    driver:
+      image: dokken/rockylinux-8
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: rockylinux-9
+    driver:
+      image: dokken/rockylinux-9
+      pid_one_command: /usr/lib/systemd/systemd
+
+  - name: ubuntu-22.04
+    driver:
+      image: dokken/ubuntu-22.04
       pid_one_command: /bin/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
 
-  - name: opensuse-leap-15
+  - name: ubuntu-24.04
     driver:
-      image: dokken/opensuse-leap-15
+      image: dokken/ubuntu-24.04
       pid_one_command: /bin/systemd
+      intermediate_instructions:
+        - RUN /usr/bin/apt-get update

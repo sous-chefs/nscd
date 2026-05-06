@@ -1,0 +1,10 @@
+---
+name: default
+title: Default nscd Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Default InSpec tests for the nscd cookbook
+version: 1.0.0
+depends:
+  - name: common
+    path: test/integration/common
