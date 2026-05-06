@@ -1,0 +1,10 @@
+---
+name: clear-cache
+title: Clear Cache nscd Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Clear cache InSpec tests for the nscd cookbook
+version: 1.0.0
+depends:
+  - name: common
+    path: test/integration/common
