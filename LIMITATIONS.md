@@ -14,7 +14,8 @@ This cookbook does not configure third-party package repositories or build nscd 
 ### DNF/YUM (RHEL family)
 
 * Red Hat Enterprise Linux 8 and 9 provide `nscd` packages.
-* AlmaLinux 8 and 9, Rocky Linux 8 and 9, Oracle Linux 8 and 9, CentOS Stream 9, Amazon Linux 2, and Amazon Linux 2023 are supported as compatible RHEL-family package platforms.
+* AlmaLinux 8 and 9, Rocky Linux 8 and 9, Oracle Linux 8 and 9, CentOS Stream 9, and Amazon Linux 2023 are supported as compatible RHEL-family package platforms.
+* Amazon Linux 2 is not in the current test matrix because current Chef/Cinc clients require newer glibc and libcrypt versions than the platform provides.
 * Fedora is not supported because Fedora removed the glibc `nscd` subpackage after Fedora 34.
 
 ### Zypper (SUSE)

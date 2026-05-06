@@ -11,7 +11,7 @@ issues_url        'https://github.com/sous-chefs/nscd/issues'
 chef_version      '>= 15.3'
 
 supports 'almalinux', '>= 8.0'
-supports 'amazon', '>= 2.0'
+supports 'amazon', '>= 2023.0'
 supports 'centos_stream', '>= 9.0'
 supports 'debian', '>= 12.0'
 supports 'oracle', '>= 8.0'

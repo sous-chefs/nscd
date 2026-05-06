@@ -11,11 +11,6 @@ provisioner:
   name: dokken
 
 platforms:
-  - name: amazonlinux-2
-    driver:
-      image: dokken/amazonlinux-2
-      pid_one_command: /usr/lib/systemd/systemd
-
   - name: amazonlinux-2023
     driver:
       image: dokken/amazonlinux-2023
@@ -46,7 +41,7 @@ platforms:
   - name: debian-13
     driver:
       image: dokken/debian-13
-      pid_one_command: /bin/systemd
+      pid_one_command: /usr/lib/systemd/systemd
       intermediate_instructions:
         - RUN /usr/bin/apt-get update
 

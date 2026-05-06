@@ -16,29 +16,29 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Platforms
 
-- AlmaLinux 8+
-- Amazon Linux 2+
-- CentOS Stream 9+
-- Debian 12+
-- Oracle Linux 8+
-- Red Hat Enterprise Linux 8+
-- Rocky Linux 8+
-- Ubuntu 22.04+
+* AlmaLinux 8+
+* Amazon Linux 2023+
+* CentOS Stream 9+
+* Debian 12+
+* Oracle Linux 8+
+* Red Hat Enterprise Linux 8+
+* Rocky Linux 8+
+* Ubuntu 22.04+
 
 ### Chef
 
-- Chef 15.3+
+* Chef 15.3+
 
 ### Cookbooks
 
-- none
+* none
 
 ## Resources
 
 See the resource documentation:
 
-- [nscd](documentation/nscd.md)
-- [nscd_clear_cache](documentation/nscd_clear_cache.md)
+* [nscd](documentation/nscd.md)
+* [nscd_clear_cache](documentation/nscd_clear_cache.md)
 
 ## Migration
 
