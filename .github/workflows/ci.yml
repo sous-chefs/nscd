@@ -9,7 +9,7 @@ name: ci
 
 jobs:
   lint-unit:
-    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@6.0.0
+    uses: sous-chefs/.github/.github/workflows/lint-unit.yml@7.0.0
     permissions:
       actions: write
       checks: write
@@ -43,7 +43,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v5
       - name: Install Chef
-        uses: sous-chefs/.github/.github/actions/install-workstation@6.0.0
+        uses: sous-chefs/.github/.github/actions/install-workstation@7.0.0
       - name: Test Kitchen
         run: chef exec kitchen test ${{ matrix.suite }}-${{ matrix.os }} --destroy=always
         env:
