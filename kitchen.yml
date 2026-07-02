@@ -30,12 +30,6 @@ platforms:
   - name: ubuntu-22.04
   - name: ubuntu-24.04
 
-x-run_lists:
-  default: &default_run_list
-    - recipe[test::default]
-  clear_cache: &clear_cache_run_list
-    - recipe[test::clear_cache]
-
 x-verifiers:
   default: &default_verifier
     inspec_tests:
@@ -46,8 +40,8 @@ x-verifiers:
 
 suites:
   - name: default
-    run_list: *default_run_list
+    named_run_list: default
     verifier: *default_verifier
   - name: clear-cache
-    run_list: *clear_cache_run_list
+    named_run_list: clear_cache
     verifier: *clear_cache_verifier
